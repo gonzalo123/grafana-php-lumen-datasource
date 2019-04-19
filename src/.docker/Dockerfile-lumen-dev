@@ -1,0 +1,28 @@
+FROM composer:1.6 AS composer
+
+FROM php:7.2-fpm
+
+ENV PHP_XDEBUG_REMOTE_ENABLE 1
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
+RUN apt-get update && apt-get install -my \
+    git \
+    libghc-zlib-dev && \
+    apt-get clean
+
+RUN apt-get install -y libpq-dev \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pdo pdo_pgsql pgsql opcache zip bcmath \
+    && docker-php-ext-install sockets
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN composer --version
+
+RUN composer global require "laravel/lumen-installer"
+ENV PATH ~/.composer/vendor/bin:$PATH
+
+RUN pecl install xdebug && docker-php-ext-enable xdebug \
+    && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
+
+COPY ./api /code/src
+WORKDIR /code/src

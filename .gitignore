@@ -1,0 +1,8 @@
+/.env
+/web/env/local/.env
+node_modules
+utils
+exclude
+src/vendor
+src/storage/localusers.php
+storage/logs/

@@ -1,0 +1,49 @@
+version: '2'
+
+services:
+  nginx:
+    image: gonzalo123.nginx
+    restart: always
+    ports:
+      - "80:80"
+    build:
+      context: ./src
+      dockerfile: .docker/Dockerfile-nginx
+    volumes:
+      - ./src/api:/code/src
+  api:
+    image: gonzalo123.api
+    restart: always
+    build:
+      context: ./src
+      dockerfile: .docker/Dockerfile-lumen-dev
+    environment:
+      XDEBUG_CONFIG: remote_host=${MY_IP}
+    volumes:
+      - ./src/api:/code/src
+  grafana:
+    image: gonzalo123.grafana
+    build:
+      context: ./src
+      dockerfile: .docker/Dockerfile-grafana
+    restart: always
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GF_SECURITY_ADMIN_USER}
+      - GF_SECURITY_ADMIN_PASSWORD=${GF_SECURITY_ADMIN_PASSWORD}
+      - GF_USERS_DEFAULT_THEME=${GF_USERS_DEFAULT_THEME}
+      - GF_USERS_ALLOW_SIGN_UP=${GF_USERS_ALLOW_SIGN_UP}
+      - GF_USERS_ALLOW_ORG_CREATE=${GF_USERS_ALLOW_ORG_CREATE}
+      - GF_AUTH_ANONYMOUS_ENABLED=${GF_AUTH_ANONYMOUS_ENABLED}
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-db:/var/lib/grafana
+      - grafana-log:/var/log/grafana
+      - grafana-conf:/etc/grafana
+volumes:
+  grafana-db:
+    driver: local
+  grafana-log:
+    driver: local
+  grafana-conf:
+    driver: local

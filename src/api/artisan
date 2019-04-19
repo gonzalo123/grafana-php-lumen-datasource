@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Symfony\Component\Console\Input\ArgvInput;
+use Symfony\Component\Console\Output\ConsoleOutput;
+use App\Console\Kernel;
+use Dotenv\Dotenv;
+use Laravel\Lumen\Application;
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+$dotenv = Dotenv::create(__DIR__ . '/env/' . Common::getEnv());
+$dotenv->load();
+
+$app = new Application(dirname(__DIR__));
+
+
+$app->singleton(Kernel::class, App\Console\Kernel::class);
+$app->singleton(ExceptionHandler::class, App\Exceptions\Handler::class);
+
+$kernel = $app->make(Kernel::class);
+
+exit($kernel->handle(new ArgvInput, new ConsoleOutput));

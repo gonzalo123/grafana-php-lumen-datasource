@@ -1,0 +1,24 @@
+FROM composer:1.6 AS composer
+
+FROM php:7.1-fpm
+
+ENV COMPOSER_ALLOW_SUPERUSER 1
+
+RUN apt-get update && apt-get install -my \
+    git \
+    libghc-zlib-dev && \
+    apt-get clean
+
+RUN apt-get install -y libpq-dev \
+    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
+    && docker-php-ext-install pdo pdo_pgsql pgsql opcache zip bcmath \
+    && docker-php-ext-install sockets
+
+COPY --from=composer /usr/bin/composer /usr/bin/composer
+RUN composer --version
+
+RUN composer global require "laravel/lumen-installer"
+ENV PATH ~/.composer/vendor/bin:$PATH
+
+COPY ./api /code/src
+WORKDIR /code/src

@@ -1,0 +1,23 @@
+{
+  "id": 1,
+  "orgId": 1,
+  "name": "JSON",
+  "type": "simpod-json-datasource",
+  "typeLogoUrl": "",
+  "access": "direct",
+  "url": "http://localhost:8080",
+  "password": "",
+  "user": "",
+  "database": "",
+  "basicAuth": true,
+  "basicAuthUser": "user",
+  "basicAuthPassword": "pass",
+  "withCredentials": false,
+  "isDefault": true,
+  "jsonData": {
+    "keepCookies": []
+  },
+  "secureJsonFields": {},
+  "version": 3,
+  "readOnly": false
+}

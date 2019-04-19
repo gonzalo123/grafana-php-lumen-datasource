@@ -1,0 +1,12 @@
+FROM grafana/grafana:6.1.4
+
+COPY ./grafana/grafana.ini /etc/grafana/grafana.ini
+COPY ./grafana/dashboards /etc/grafana/dashboards
+COPY ./grafana/datasources /etc/grafana/datasources
+
+COPY ./grafana/entrypoint.sh .
+
+
+RUN rm -rf /var/lib/grafana/.init
+
+ENTRYPOINT ["sh", "./entrypoint.sh"]
