@@ -187,7 +187,6 @@ class AnnotationHandler
         $json       = $request->json();
         $annotation = $json->get('annotation');
         $range      = $json->get('range');
-        error_log(json_encode($json->all()));
 
         return $this->getAnnotations($annotation, $range);
     }
