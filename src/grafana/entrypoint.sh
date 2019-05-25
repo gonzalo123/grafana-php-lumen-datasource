@@ -16,14 +16,8 @@ if [ ! -f "/var/lib/grafana/.init" ]; then
       sleep 1
     done
 
-    for datasource in /etc/grafana/datasources/*; do
-      echo installed $datasource;
-      post "$(envsubst < $datasource)" "/api/datasources"
-    done
-
-    for dashboard in /etc/grafana/dashboards/*; do
-        post "$(cat $dashboard)" "/api/dashboards/db"
-    done
+    curl -v -H 'Content-Type: application/json' -d @/etc/grafana/datasources/json.json "$url/api/datasources"
+    curl -v -H 'Content-Type: application/json' -d @/etc/grafana/dashboards/example.json "$url/api/dashboards/db"
 
     touch "/var/lib/grafana/.init"
     

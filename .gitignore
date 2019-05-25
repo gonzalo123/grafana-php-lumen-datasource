@@ -1,5 +1,3 @@
-/.env
-/web/env/local/.env
 node_modules
 utils
 exclude

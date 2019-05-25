@@ -1,275 +1,279 @@
 {
-  "annotations": {
-    "list": [
-      {
-        "datasource": "JSON",
-        "enable": true,
-        "hide": false,
-        "iconColor": "rgba(255, 96, 96, 1)",
-        "limit": 100,
-        "name": "1 Hour",
-        "query": "1",
-        "showIn": 0,
-        "tags": [],
-        "type": "tags"
-      },
-      {
-        "datasource": "JSON",
-        "enable": false,
-        "hide": false,
-        "iconColor": "#3274D9",
-        "limit": 100,
-        "name": "6 Hour",
-        "query": "6",
-        "showIn": 0,
-        "tags": [],
-        "type": "tags"
-      },
-      {
-        "builtIn": 1,
-        "datasource": "-- Grafana --",
-        "enable": true,
-        "hide": true,
-        "iconColor": "rgba(0, 211, 255, 1)",
-        "name": "Annotations & Alerts",
-        "type": "dashboard"
-      }
-    ]
-  },
-  "editable": true,
-  "gnetId": null,
-  "graphTooltip": 0,
-  "id": 2,
-  "iteration": 1555686602041,
-  "links": [],
-  "panels": [
-    {
-      "aliasColors": {},
-      "bars": false,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": "-- Mixed --",
-      "fill": 1,
-      "gridPos": {
-        "h": 8,
-        "w": 15,
-        "x": 0,
-        "y": 0
-      },
-      "id": 2,
-      "legend": {
-        "avg": false,
-        "current": false,
-        "max": false,
-        "min": false,
-        "show": true,
-        "total": false,
-        "values": false
-      },
-      "lines": true,
-      "linewidth": 1,
-      "links": [],
-      "nullPointMode": "null",
-      "percentage": false,
-      "pointradius": 2,
-      "points": false,
-      "renderer": "flot",
-      "seriesOverrides": [],
-      "spaceLength": 10,
-      "stack": false,
-      "steppedLine": false,
-      "targets": [
+  "dashboard": {
+    "annotations": {
+      "list": [
         {
-          "data": "",
           "datasource": "JSON",
+          "enable": true,
           "hide": false,
-          "refId": "A",
-          "target": "$target",
-          "type": "timeseries"
-        }
-      ],
-      "thresholds": [],
-      "timeFrom": null,
-      "timeRegions": [],
-      "timeShift": null,
-      "title": "Example 1",
-      "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
-      },
-      "type": "graph",
-      "xaxis": {
-        "buckets": null,
-        "mode": "time",
-        "name": null,
-        "show": true,
-        "values": []
-      },
-      "yaxes": [
-        {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
+          "iconColor": "rgba(255, 96, 96, 1)",
+          "limit": 100,
+          "name": "1 Hour",
+          "query": "1",
+          "showIn": 0,
+          "tags": [],
+          "type": "tags"
         },
         {
-          "format": "short",
-          "label": null,
-          "logBase": 1,
-          "max": null,
-          "min": null,
-          "show": true
+          "datasource": "JSON",
+          "enable": false,
+          "hide": false,
+          "iconColor": "#3274D9",
+          "limit": 100,
+          "name": "6 Hour",
+          "query": "6",
+          "showIn": 0,
+          "tags": [],
+          "type": "tags"
+        },
+        {
+          "builtIn": 1,
+          "datasource": "-- Grafana --",
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
         }
-      ],
-      "yaxis": {
-        "align": false,
-        "alignLevel": null
-      }
+      ]
     },
-    {
-      "cacheTimeout": null,
-      "datasource": "-- Mixed --",
-      "gridPos": {
-        "h": 8,
-        "w": 7,
-        "x": 15,
-        "y": 0
-      },
-      "id": 4,
-      "links": [],
-      "options": {
-        "maxValue": 100,
-        "minValue": 0,
-        "orientation": "auto",
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "thresholds": [
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": null,
+    "iteration": 1558774980970,
+    "links": [],
+    "panels": [
+      {
+        "aliasColors": {},
+        "bars": false,
+        "dashLength": 10,
+        "dashes": false,
+        "datasource": "-- Mixed --",
+        "fill": 1,
+        "gridPos": {
+          "h": 8,
+          "w": 15,
+          "x": 0,
+          "y": 0
+        },
+        "id": 2,
+        "legend": {
+          "avg": false,
+          "current": false,
+          "max": false,
+          "min": false,
+          "show": true,
+          "total": false,
+          "values": false
+        },
+        "lines": true,
+        "linewidth": 1,
+        "links": [],
+        "nullPointMode": "null",
+        "percentage": false,
+        "pointradius": 2,
+        "points": false,
+        "renderer": "flot",
+        "seriesOverrides": [],
+        "spaceLength": 10,
+        "stack": false,
+        "steppedLine": false,
+        "targets": [
           {
-            "color": "green",
-            "index": 0,
-            "value": null
-          },
-          {
-            "color": "#EAB839",
-            "index": 1,
-            "value": 40
-          },
-          {
-            "color": "red",
-            "index": 2,
-            "value": 80
+            "data": "",
+            "datasource": "JSON",
+            "hide": false,
+            "refId": "A",
+            "target": "$target",
+            "type": "timeseries"
           }
         ],
-        "valueMappings": [],
-        "valueOptions": {
-          "decimals": null,
-          "prefix": "",
-          "stat": "mean",
-          "suffix": "",
-          "unit": "none"
+        "thresholds": [],
+        "timeFrom": null,
+        "timeRegions": [],
+        "timeShift": null,
+        "title": "Example 1",
+        "tooltip": {
+          "shared": true,
+          "sort": 0,
+          "value_type": "individual"
+        },
+        "type": "graph",
+        "xaxis": {
+          "buckets": null,
+          "mode": "time",
+          "name": null,
+          "show": true,
+          "values": []
+        },
+        "yaxes": [
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          },
+          {
+            "format": "short",
+            "label": null,
+            "logBase": 1,
+            "max": null,
+            "min": null,
+            "show": true
+          }
+        ],
+        "yaxis": {
+          "align": false,
+          "alignLevel": null
         }
       },
-      "pluginVersion": "6.1.4",
-      "targets": [
-        {
-          "data": "",
-          "datasource": "JSON",
-          "hide": false,
-          "refId": "A",
-          "target": "100",
-          "type": "timeseries"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "gauge"
-    }
-  ],
-  "schemaVersion": 18,
-  "style": "dark",
-  "tags": [],
-  "templating": {
-    "list": [
       {
-        "allValue": null,
-        "current": {
-          "tags": [],
-          "text": "100",
-          "value": "100"
+        "cacheTimeout": null,
+        "datasource": "-- Mixed --",
+        "gridPos": {
+          "h": 8,
+          "w": 7,
+          "x": 15,
+          "y": 0
         },
-        "hide": 0,
-        "includeAll": false,
-        "label": null,
-        "multi": false,
-        "name": "target",
-        "options": [
+        "id": 4,
+        "links": [],
+        "options": {
+          "maxValue": 100,
+          "minValue": 0,
+          "orientation": "auto",
+          "showThresholdLabels": false,
+          "showThresholdMarkers": true,
+          "thresholds": [
+            {
+              "color": "green",
+              "index": 0,
+              "value": null
+            },
+            {
+              "color": "#EAB839",
+              "index": 1,
+              "value": 40
+            },
+            {
+              "color": "red",
+              "index": 2,
+              "value": 80
+            }
+          ],
+          "valueMappings": [],
+          "valueOptions": {
+            "decimals": null,
+            "prefix": "",
+            "stat": "mean",
+            "suffix": "",
+            "unit": "none"
+          }
+        },
+        "pluginVersion": "6.1.4",
+        "targets": [
           {
-            "selected": false,
-            "text": "10",
-            "value": "10"
-          },
-          {
-            "selected": false,
-            "text": "20",
-            "value": "20"
-          },
-          {
-            "selected": false,
-            "text": "50",
-            "value": "50"
-          },
-          {
-            "selected": true,
+            "data": "",
+            "datasource": "JSON",
+            "hide": false,
+            "refId": "A",
+            "target": "100",
+            "type": "timeseries"
+          }
+        ],
+        "timeFrom": null,
+        "timeShift": null,
+        "title": "",
+        "type": "gauge"
+      }
+    ],
+    "schemaVersion": 18,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "allValue": null,
+          "current": {
+            "tags": [],
             "text": "100",
             "value": "100"
           },
-          {
-            "selected": false,
-            "text": "120",
-            "value": "120"
-          }
-        ],
-        "query": "10, 20, 50, 100, 120",
-        "skipUrlSync": false,
-        "type": "custom"
-      }
-    ]
+          "hide": 0,
+          "includeAll": false,
+          "label": null,
+          "multi": false,
+          "name": "target",
+          "options": [
+            {
+              "selected": false,
+              "text": "10",
+              "value": "10"
+            },
+            {
+              "selected": false,
+              "text": "20",
+              "value": "20"
+            },
+            {
+              "selected": false,
+              "text": "50",
+              "value": "50"
+            },
+            {
+              "selected": true,
+              "text": "100",
+              "value": "100"
+            },
+            {
+              "selected": false,
+              "text": "120",
+              "value": "120"
+            }
+          ],
+          "query": "10, 20, 50, 100, 120",
+          "skipUrlSync": false,
+          "type": "custom"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-6h",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "timezone": "",
+    "title": "Dashboard Example",
+    "uid": null,
+    "version": 8
   },
-  "time": {
-    "from": "now-6h",
-    "to": "now"
-  },
-  "timepicker": {
-    "refresh_intervals": [
-      "5s",
-      "10s",
-      "30s",
-      "1m",
-      "5m",
-      "15m",
-      "30m",
-      "1h",
-      "2h",
-      "1d"
-    ],
-    "time_options": [
-      "5m",
-      "15m",
-      "1h",
-      "6h",
-      "12h",
-      "24h",
-      "2d",
-      "7d",
-      "30d"
-    ]
-  },
-  "timezone": "",
-  "title": "Dashboard example",
-  "uid": "LdnEwCRZk",
-  "version": 12
+  "folderId": 0,
+  "overwrite": false
 }
